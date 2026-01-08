@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paxi.ai | Botanical Mineral Workspace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Botanical Mineral Palette */
+            --bg-canvas: #FCFAF7; 
+            --bg-surface: #FFFFFF;
+            
+            /* Accents */
+            --zen-indigo: #8C9AB8;
+            --zen-olive: #A3B18A;
+            --zen-ochre: #D4A373;
+            --zen-violet: #B5A1B7;
+            --zen-slate: #E3D5CA;
+            
+            /* Text - Darkened secondary by ~8% and muted by ~8% */
+            --text-main: #1F2124;
+            --text-secondary: #4D4F53; 
+            --text-muted: #8A8D91;
+            
+            --border-organic: rgba(31, 33, 36, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-canvas);
+            color: var(--text-main);
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: -0.012em;
+        }
+
+        .zen-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-organic);
+            border-radius: 28px;
+            box-shadow: 0 4px 24px -12px rgba(31, 33, 36, 0.08);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .zen-card:hover {
+            box-shadow: 0 16px 48px -16px rgba(31, 33, 36, 0.12);
+            transform: translateY(-2px);
+            border-color: var(--zen-indigo);
+        }
+
+        .label-zen {
+            font-size: 10px;
+            font-weight: 800; /* Increased from 700 */
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+        }
+
+        .header-title {
+            letter-spacing: -0.04em;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #EAEAEA;
+            border-radius: 10px;
+        }
+
+        .glass-header {
+            background: rgba(252, 250, 247, 0.75);
+            backdrop-filter: blur(32px);
+            border-bottom: 1px solid var(--border-organic);
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 800; /* Increased from 700 */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-pill.success { background: #F0F4E8; color: #5C6E46; border: 1px solid rgba(163, 177, 138, 0.2); }
+        .status-pill.warning { background: #FBF4E9; color: #8F6A47; border: 1px solid rgba(212, 163, 115, 0.2); }
+        .status-pill.info { background: #EEF1F6; color: #526384; border: 1px solid rgba(140, 154, 184, 0.2); }
+        .status-pill.purple { background: #F4EFF6; color: #725D74; border: 1px solid rgba(181, 161, 183, 0.2); }
+
+        .btn-zen {
+            padding: 10px 24px;
+            border-radius: 14px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-zen-primary {
+            background: var(--text-main);
+            color: white;
+            box-shadow: 0 8px 24px -8px rgba(31, 33, 36, 0.4);
+        }
+
+        .btn-zen-primary:hover {
+            background: var(--zen-indigo);
+            transform: scale(1.02);
+        }
+
+        .animate-zen {
+            animation: zenFlow 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes zenFlow {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Accent classes */
+        .bg-indigo { background-color: var(--zen-indigo); }
+        .bg-olive { background-color: var(--zen-olive); }
+        .bg-ochre { background-color: var(--zen-ochre); }
+        .bg-violet { background-color: var(--zen-violet); }
+        .bg-slate { background-color: var(--zen-slate); }
+        
+        .text-indigo { color: var(--zen-indigo); }
+        .text-olive { color: var(--zen-olive); }
+        .text-ochre { color: var(--zen-ochre); }
+        .text-violet { color: var(--zen-violet); }
+        .text-slate { color: var(--zen-slate); }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "primereact/": "https://esm.sh/primereact@^10.9.7/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
